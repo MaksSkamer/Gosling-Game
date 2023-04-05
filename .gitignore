@@ -1,1 +1,4 @@
-hui pizda zalupa
+# Игнор-лист файлов проекта
+
+/Gosling-Game/Assets/*
+*.csproj

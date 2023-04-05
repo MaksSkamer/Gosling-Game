@@ -1,4 +1,8 @@
 # Игнор-лист файлов проекта
 
-/Gosling-Game/Assets/*
+MainGame/Library/*
+MainGame/Logs/*
+MainGame/Packages/*
+MainGame/ProjectSettings/*
+MainGame/UserSettings/*
 *.csproj

@@ -702,10 +702,6 @@
       <Project>{11DC54FC-DFC8-54F6-6E30-69FB74BFC3BD}</Project>
       <Name>Unity.Services.Core.Environments.Player</Name>
     </ProjectReference>
-    <ProjectReference Include="UnityEngine.UI.Player.csproj">
-      <Project>{0F273A45-F1C9-7A06-C14B-C8CB459725B6}</Project>
-      <Name>UnityEngine.UI.Player</Name>
-    </ProjectReference>
     <ProjectReference Include="UnityEngine.Purchasing.Stores.Player.csproj">
       <Project>{CAB221FB-0F8D-E8CA-2F25-0BB559E913E3}</Project>
       <Name>UnityEngine.Purchasing.Stores.Player</Name>
@@ -713,6 +709,10 @@
     <ProjectReference Include="Unity.Services.Core.Player.csproj">
       <Project>{ED9C684B-9906-9C38-8DFA-97FBDFF055C2}</Project>
       <Name>Unity.Services.Core.Player</Name>
+    </ProjectReference>
+    <ProjectReference Include="UnityEngine.UI.Player.csproj">
+      <Project>{0F273A45-F1C9-7A06-C14B-C8CB459725B6}</Project>
+      <Name>UnityEngine.UI.Player</Name>
     </ProjectReference>
     <ProjectReference Include="UnityEngine.XR.LegacyInputHelpers.Player.csproj">
       <Project>{7B644ED7-E8A1-7AB1-79DB-64F25A0B983E}</Project>

@@ -79,8 +79,8 @@
     <Compile Include="Library\PackageCache\com.unity.purchasing@4.7.0\Runtime\Purchasing\Analytics\Legacy\LegacyUnityAnalytics.cs" />
     <Compile Include="Library\PackageCache\com.unity.purchasing@4.7.0\Runtime\Purchasing\Analytics\AnalyticsClient.cs" />
     <Compile Include="Library\PackageCache\com.unity.purchasing@4.7.0\Runtime\Purchasing\Telemetry\Diagnostics\TelemetryDiagnostics.cs" />
-    <Compile Include="Library\PackageCache\com.unity.purchasing@4.7.0\Runtime\Purchasing\IInternalStoreListener.cs" />
     <Compile Include="Library\PackageCache\com.unity.purchasing@4.7.0\Runtime\Purchasing\Telemetry\TelemetryQueue.cs" />
+    <Compile Include="Library\PackageCache\com.unity.purchasing@4.7.0\Runtime\Purchasing\IInternalStoreListener.cs" />
     <Compile Include="Library\PackageCache\com.unity.purchasing@4.7.0\Runtime\Purchasing\Telemetry\Metrics\Interfaces\ITelemetryMetricsInstanceWrapper.cs" />
     <Compile Include="Library\PackageCache\com.unity.purchasing@4.7.0\Runtime\Purchasing\Utilites\ILoggerExtensions.cs" />
     <Compile Include="Library\PackageCache\com.unity.purchasing@4.7.0\Runtime\Purchasing\PayoutDefinition.cs" />
@@ -425,8 +425,17 @@
     <Reference Include="Unity.Plastic.Newtonsoft.Json">
       <HintPath>Library\PackageCache\com.unity.collab-proxy@2.0.1\Lib\Editor\PlasticSCM\Unity.Plastic.Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="Google.VersionHandlerImpl">
+      <HintPath>Assets\MobileDependencyResolver\Editor\Google.VersionHandlerImpl.dll</HintPath>
+    </Reference>
     <Reference Include="log4netPlastic">
       <HintPath>Library\PackageCache\com.unity.collab-proxy@2.0.1\Lib\Editor\PlasticSCM\log4netPlastic.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.JarResolver">
+      <HintPath>Assets\MobileDependencyResolver\Editor\Google.JarResolver.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.VersionHandler">
+      <HintPath>Assets\MobileDependencyResolver\Editor\Google.VersionHandler.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json">
       <HintPath>Library\PackageCache\com.unity.nuget.newtonsoft-json@3.1.0\Runtime\Newtonsoft.Json.dll</HintPath>

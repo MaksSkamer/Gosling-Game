@@ -79,8 +79,8 @@
     <Compile Include="Library\PackageCache\com.unity.purchasing@4.7.0\Runtime\Purchasing\Analytics\Legacy\LegacyUnityAnalytics.cs" />
     <Compile Include="Library\PackageCache\com.unity.purchasing@4.7.0\Runtime\Purchasing\Analytics\AnalyticsClient.cs" />
     <Compile Include="Library\PackageCache\com.unity.purchasing@4.7.0\Runtime\Purchasing\Telemetry\Diagnostics\TelemetryDiagnostics.cs" />
-    <Compile Include="Library\PackageCache\com.unity.purchasing@4.7.0\Runtime\Purchasing\IInternalStoreListener.cs" />
     <Compile Include="Library\PackageCache\com.unity.purchasing@4.7.0\Runtime\Purchasing\Telemetry\TelemetryQueue.cs" />
+    <Compile Include="Library\PackageCache\com.unity.purchasing@4.7.0\Runtime\Purchasing\IInternalStoreListener.cs" />
     <Compile Include="Library\PackageCache\com.unity.purchasing@4.7.0\Runtime\Purchasing\Telemetry\Metrics\Interfaces\ITelemetryMetricsInstanceWrapper.cs" />
     <Compile Include="Library\PackageCache\com.unity.purchasing@4.7.0\Runtime\Purchasing\Utilites\ILoggerExtensions.cs" />
     <Compile Include="Library\PackageCache\com.unity.purchasing@4.7.0\Runtime\Purchasing\PayoutDefinition.cs" />

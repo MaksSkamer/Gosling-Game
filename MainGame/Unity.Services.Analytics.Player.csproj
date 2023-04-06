@@ -99,9 +99,9 @@
     <Compile Include="Library\PackageCache\com.unity.services.analytics@4.4.0\Runtime\Runtime\AnalyticsForgetter.cs" />
     <Compile Include="Library\PackageCache\com.unity.services.analytics@4.4.0\Runtime\SdkVersion.cs" />
     <Compile Include="Library\PackageCache\com.unity.services.analytics@4.4.0\Runtime\ObsoleteAPI\Events.deprecated.cs" />
-    <Compile Include="Library\PackageCache\com.unity.services.analytics@4.4.0\Runtime\Events\AcquisitionSource\AcquisitionSourceParameters.cs" />
     <Compile Include="Library\PackageCache\com.unity.services.analytics@4.4.0\Runtime\IAnalyticsService.cs" />
     <Compile Include="Library\PackageCache\com.unity.services.analytics@4.4.0\Runtime\Events\Transaction\TransactionType.cs" />
+    <Compile Include="Library\PackageCache\com.unity.services.analytics@4.4.0\Runtime\Events\AcquisitionSource\AcquisitionSourceParameters.cs" />
     <Compile Include="Library\PackageCache\com.unity.services.analytics@4.4.0\Runtime\Platform\DeviceVolume.cs" />
     <Compile Include="Library\PackageCache\com.unity.services.analytics@4.4.0\Runtime\Runtime\Consent\ConsentCheckException.cs" />
     <Compile Include="Library\PackageCache\com.unity.services.analytics@4.4.0\Runtime\Runtime\Ua2CoreInitializeCallback.cs" />

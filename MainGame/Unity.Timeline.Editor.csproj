@@ -80,8 +80,8 @@
     <Compile Include="Library\PackageCache\com.unity.timeline@1.8.2\Editor\Window\TimelineWindow.cs" />
     <Compile Include="Library\PackageCache\com.unity.timeline@1.8.2\Editor\State\SequencePath.cs" />
     <Compile Include="Library\PackageCache\com.unity.timeline@1.8.2\Editor\Utilities\Scopes\GUIColorOverride.cs" />
-    <Compile Include="Library\PackageCache\com.unity.timeline@1.8.2\Editor\inspectors\CurvesOwner\CurvesOwnerInspectorHelper.cs" />
     <Compile Include="Library\PackageCache\com.unity.timeline@1.8.2\Editor\Extensions\TrackExtensions.cs" />
+    <Compile Include="Library\PackageCache\com.unity.timeline@1.8.2\Editor\inspectors\CurvesOwner\CurvesOwnerInspectorHelper.cs" />
     <Compile Include="Library\PackageCache\com.unity.timeline@1.8.2\Editor\Signals\TreeView\SignalListFactory.cs" />
     <Compile Include="Library\PackageCache\com.unity.timeline@1.8.2\Editor\inspectors\BasicAssetInspector.cs" />
     <Compile Include="Library\PackageCache\com.unity.timeline@1.8.2\Editor\inspectors\IInspectorChangeHandler.cs" />
@@ -122,8 +122,8 @@
     <Compile Include="Library\PackageCache\com.unity.timeline@1.8.2\Editor\Utilities\ObjectExtension.cs" />
     <Compile Include="Library\PackageCache\com.unity.timeline@1.8.2\Editor\treeview\Snapping\IAttractable.cs" />
     <Compile Include="Library\PackageCache\com.unity.timeline@1.8.2\Editor\inspectors\MarkerInspector.cs" />
-    <Compile Include="Library\PackageCache\com.unity.timeline@1.8.2\Editor\treeview\TimelineTreeViewGUI.cs" />
     <Compile Include="Library\PackageCache\com.unity.timeline@1.8.2\Editor\DirectorStyles.cs" />
+    <Compile Include="Library\PackageCache\com.unity.timeline@1.8.2\Editor\treeview\TimelineTreeViewGUI.cs" />
     <Compile Include="Library\PackageCache\com.unity.timeline@1.8.2\Editor\Actions\MarkerAction.cs" />
     <Compile Include="Library\PackageCache\com.unity.timeline@1.8.2\Editor\Utilities\Clipboard.cs" />
     <Compile Include="Library\PackageCache\com.unity.timeline@1.8.2\Editor\Utilities\TimelineKeyboardNavigation.cs" />
@@ -191,10 +191,10 @@
     <Compile Include="Library\PackageCache\com.unity.timeline@1.8.2\Editor\Utilities\Scopes\IndentLevelScope.cs" />
     <Compile Include="Library\PackageCache\com.unity.timeline@1.8.2\Editor\Undo\UndoExtensions.cs" />
     <Compile Include="Library\PackageCache\com.unity.timeline@1.8.2\Editor\Extensions\AnimationTrackExtensions.cs" />
+    <Compile Include="Library\PackageCache\com.unity.timeline@1.8.2\Editor\Utilities\AnimatedParameterCache.cs" />
     <Compile Include="Library\PackageCache\com.unity.timeline@1.8.2\Editor\Signals\Styles.cs" />
     <Compile Include="Library\PackageCache\com.unity.timeline@1.8.2\Editor\Manipulators\EditModeInputHandler.cs" />
     <Compile Include="Library\PackageCache\com.unity.timeline@1.8.2\Editor\inspectors\ClipInspector\ClipInspectorSelectionInfo.cs" />
-    <Compile Include="Library\PackageCache\com.unity.timeline@1.8.2\Editor\Utilities\AnimatedParameterCache.cs" />
     <Compile Include="Library\PackageCache\com.unity.timeline@1.8.2\Editor\Window\TimelineWindow_StateChange.cs" />
     <Compile Include="Library\PackageCache\com.unity.timeline@1.8.2\Editor\Utilities\FrameRateDisplayUtility.cs" />
     <Compile Include="Library\PackageCache\com.unity.timeline@1.8.2\Editor\CustomEditors\ClipEditor.cs" />
@@ -250,9 +250,9 @@
     <Compile Include="Library\PackageCache\com.unity.timeline@1.8.2\Editor\State\ISequenceState.cs" />
     <Compile Include="Library\PackageCache\com.unity.timeline@1.8.2\Editor\Animation\ClipCurveEditor.cs" />
     <Compile Include="Library\PackageCache\com.unity.timeline@1.8.2\Editor\Undo\ApplyDefaultUndoAttribute.cs" />
-    <Compile Include="Library\PackageCache\com.unity.timeline@1.8.2\Editor\inspectors\DirectorNamedColorInspector.cs" />
     <Compile Include="Library\PackageCache\com.unity.timeline@1.8.2\Editor\treeview\Control.cs" />
     <Compile Include="Library\PackageCache\com.unity.timeline@1.8.2\Editor\Manipulators\Sequence\RectangleZoom.cs" />
+    <Compile Include="Library\PackageCache\com.unity.timeline@1.8.2\Editor\inspectors\DirectorNamedColorInspector.cs" />
     <Compile Include="Library\PackageCache\com.unity.timeline@1.8.2\Editor\Trackhead.cs" />
     <Compile Include="Library\PackageCache\com.unity.timeline@1.8.2\Editor\Signals\SignalEmitterInspector.cs" />
     <Compile Include="Library\PackageCache\com.unity.timeline@1.8.2\Editor\Window\TimelineWindow_Navigator.cs" />
@@ -631,8 +631,17 @@
     <Reference Include="Unity.Plastic.Newtonsoft.Json">
       <HintPath>Library\PackageCache\com.unity.collab-proxy@2.0.1\Lib\Editor\PlasticSCM\Unity.Plastic.Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="Google.VersionHandlerImpl">
+      <HintPath>Assets\MobileDependencyResolver\Editor\Google.VersionHandlerImpl.dll</HintPath>
+    </Reference>
     <Reference Include="log4netPlastic">
       <HintPath>Library\PackageCache\com.unity.collab-proxy@2.0.1\Lib\Editor\PlasticSCM\log4netPlastic.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.JarResolver">
+      <HintPath>Assets\MobileDependencyResolver\Editor\Google.JarResolver.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.VersionHandler">
+      <HintPath>Assets\MobileDependencyResolver\Editor\Google.VersionHandler.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json">
       <HintPath>Library\PackageCache\com.unity.nuget.newtonsoft-json@3.1.0\Runtime\Newtonsoft.Json.dll</HintPath>

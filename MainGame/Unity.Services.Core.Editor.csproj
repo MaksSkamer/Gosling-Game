@@ -113,8 +113,8 @@
     <Compile Include="Library\PackageCache\com.unity.services.core@1.8.1\Editor\Core\ProjectBindRedirect\ProjectBindRedirectUiConstants.cs" />
     <Compile Include="Library\PackageCache\com.unity.services.core@1.8.1\Editor\Core\ProjectStateManagement\ProjectStateRequest.cs" />
     <Compile Include="Library\PackageCache\com.unity.services.core@1.8.1\Editor\Core\Linker\Models\XmlLinkedEvent.cs" />
-    <Compile Include="Library\PackageCache\com.unity.services.core@1.8.1\Editor\Core\ProjectBindRedirect\ProjectBindRedirectProjectSettingsUi.cs" />
     <Compile Include="Library\PackageCache\com.unity.services.core@1.8.1\Editor\Core\Networking\JsonWebToken.cs" />
+    <Compile Include="Library\PackageCache\com.unity.services.core@1.8.1\Editor\Core\ProjectBindRedirect\ProjectBindRedirectProjectSettingsUi.cs" />
     <Compile Include="Library\PackageCache\com.unity.services.core@1.8.1\Editor\Core\ProjectStateManagement\IServiceFlagRequest.cs" />
     <Compile Include="Library\PackageCache\com.unity.services.core@1.8.1\Editor\Core\UserRoleManagement\UserRole.cs" />
     <Compile Include="Library\PackageCache\com.unity.services.core@1.8.1\Editor\Core\EditorGameService\EditorGameServiceRemoteConfiguration.cs" />
@@ -452,8 +452,17 @@
     <Reference Include="Unity.Plastic.Newtonsoft.Json">
       <HintPath>Library\PackageCache\com.unity.collab-proxy@2.0.1\Lib\Editor\PlasticSCM\Unity.Plastic.Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="Google.VersionHandlerImpl">
+      <HintPath>Assets\MobileDependencyResolver\Editor\Google.VersionHandlerImpl.dll</HintPath>
+    </Reference>
     <Reference Include="log4netPlastic">
       <HintPath>Library\PackageCache\com.unity.collab-proxy@2.0.1\Lib\Editor\PlasticSCM\log4netPlastic.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.JarResolver">
+      <HintPath>Assets\MobileDependencyResolver\Editor\Google.JarResolver.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.VersionHandler">
+      <HintPath>Assets\MobileDependencyResolver\Editor\Google.VersionHandler.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json">
       <HintPath>Library\PackageCache\com.unity.nuget.newtonsoft-json@3.1.0\Runtime\Newtonsoft.Json.dll</HintPath>

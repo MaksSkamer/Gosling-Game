@@ -2,9 +2,6 @@
 
 MainGame/Library/*
 MainGame/Logs/*
-*.csproj
-*.sln
-*.vsconfig
 Assembly-CSharp.csproj
 MainGame.sln
 default-2023.dwlt
@@ -12,3 +9,6 @@ MainGame/Assets/Editor.meta
 MainGame/Assets/Editor/MediationAdapterDependencies.xml.meta
 MainGame/MainGame.sln
 MainGame/ProjectSettings/Packages/com.unity.services.mediation/Settings.json
+*.csproj
+*.sln
+*.vsconfig

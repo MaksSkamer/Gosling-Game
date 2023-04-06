@@ -5,6 +5,10 @@ MainGame/Logs/*
 *.csproj
 *.sln
 *.vsconfig
-MainGame/Assembly-CSharp.csproj
+Assembly-CSharp.csproj
+MainGame.sln
+default-2023.dwlt
+MainGame/Assets/Editor.meta
+MainGame/Assets/Editor/MediationAdapterDependencies.xml.meta
 MainGame/MainGame.sln
-MainGame/UserSettings/Layouts/default-2023.dwlt
+MainGame/ProjectSettings/Packages/com.unity.services.mediation/Settings.json

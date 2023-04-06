@@ -5,3 +5,6 @@ MainGame/Logs/*
 *.csproj
 *.sln
 *.vsconfig
+MainGame/Assembly-CSharp.csproj
+MainGame/MainGame.sln
+MainGame\UserSettings\Layouts\default-2023.dwlt

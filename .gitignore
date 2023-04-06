@@ -2,10 +2,3 @@
 
 MainGame/Library/*
 MainGame/Logs/*
-MainGame/Packages/*
-MainGame/ProjectSettings/*
-MainGame/UserSettings/*
-MainGame/Temp/*
-*.csproj
-*.sln
-*.vsconfig

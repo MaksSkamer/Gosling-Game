@@ -2,3 +2,6 @@
 
 MainGame/Library/*
 MainGame/Logs/*
+*.csproj
+*.sln
+*.vsconfig

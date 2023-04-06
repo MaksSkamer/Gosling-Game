@@ -7,4 +7,4 @@ MainGame/Logs/*
 *.vsconfig
 MainGame/Assembly-CSharp.csproj
 MainGame/MainGame.sln
-MainGame\UserSettings\Layouts\default-2023.dwlt
+MainGame/UserSettings/Layouts/default-2023.dwlt

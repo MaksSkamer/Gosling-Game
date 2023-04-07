@@ -13,12 +13,10 @@ public class Collectable : Collidable
         {
             OnCollectpl();
         }
-
     }
 
     protected virtual void OnCollectpl()
     {
         collected = true;
     }
-
 }

@@ -12,3 +12,5 @@ MainGame/ProjectSettings/Packages/com.unity.services.mediation/Settings.json
 *.csproj
 *.sln
 *.vsconfig
+MainGame/MainGame.sln
+MainGame/UserSettings/Layouts/default-2023.dwlt

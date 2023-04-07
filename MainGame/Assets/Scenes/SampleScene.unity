@@ -130,9 +130,11 @@ GameObject:
   m_Component:
   - component: {fileID: 83312711}
   - component: {fileID: 83312710}
+  - component: {fileID: 83312712}
+  - component: {fileID: 83312713}
   m_Layer: 9
   m_Name: Spider
-  m_TagString: Untagged
+  m_TagString: Fighter
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -197,13 +199,81 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 83312709}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.75, y: -1.17, z: 0}
+  m_LocalPosition: {x: 29.4, y: -0.9, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &83312712
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 83312709}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c435bb227dc29434d8e9caef1e778563, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hitpoint: 10
+  maxHitpoint: 10
+  pushReoverySpeed: 0.2
+  Yspeed: 15
+  Xspeed: 12
+  Gold: 1
+  Souls: 1
+  triggerLength: 10
+  chaseLength: 60
+  playerTransform: {fileID: 1059845948}
+--- !u!61 &83312713
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 83312709}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: -0.3467207, y: 0.28170967}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 7.87, y: 3.82}
+    newSize: {x: 7.87, y: 3.82}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 5.876358, y: 3.3432603}
+  m_EdgeRadius: 0
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -388,8 +458,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 885316064}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -10.27, y: 0.96, z: 0}
-  m_LocalScale: {x: 1.1287, y: 10.2221, z: 1}
+  m_LocalPosition: {x: -14.56, y: 2.14, z: 0}
+  m_LocalScale: {x: 1.6486737, y: -20.280958, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -453,9 +523,10 @@ GameObject:
   - component: {fileID: 1059845947}
   - component: {fileID: 1059845946}
   - component: {fileID: 1059845949}
+  - component: {fileID: 1059845950}
   m_Layer: 9
   m_Name: Player
-  m_TagString: Player
+  m_TagString: Fighter
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -477,6 +548,7 @@ MonoBehaviour:
   pushReoverySpeed: 0.2
   Yspeed: 20
   Xspeed: 20
+  DashImpulse: 150
 --- !u!212 &1059845947
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -590,3 +662,30 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 3.5028028, y: 9.533448}
   m_EdgeRadius: 0
+--- !u!50 &1059845950
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1059845945}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4

@@ -59,8 +59,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\Player\PlayerController.cs" />
-    <Compile Include="Assets\Scripts\Player\colide.cs" />
+    <Compile Include="Assets\Scripts\Additional\Collidable.cs" />
+    <Compile Include="Assets\Scripts\Additional\Damage.cs" />
     <Compile Include="Assets\Scripts\Environment\Camera\CameraFollow.cs" />
+    <Compile Include="Assets\Scripts\Additional\Fighter.cs" />
+    <Compile Include="Assets\Scripts\Additional\Mover.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

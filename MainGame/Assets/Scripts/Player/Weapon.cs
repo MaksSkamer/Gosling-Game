@@ -23,7 +23,6 @@ public class Weapon : Collidable
         anim = GetComponent<Animator>();
     }
 
-    // Update is called once per frame
     protected override void Update()
     {
         base.Update();
@@ -39,7 +38,7 @@ public class Weapon : Collidable
 
     protected override void OnCollide(Collider2D col)
     {
-        if (col.tag == "Fighter" || col.tag == "Enemy")
+        if (col.tag == "Fighter")
         {
             if (col.name == "Player")
                 return;
@@ -63,6 +62,6 @@ public class Weapon : Collidable
     public void UpgradeWeapon()
     {
         weaponlvl++;
-        // »зменение урона в %%
+        // Изменение урона в %%
     }
 }

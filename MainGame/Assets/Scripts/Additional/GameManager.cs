@@ -31,29 +31,28 @@ public class GameManager : MonoBehaviour
     // Ссылки на объекты
     public PlayerController player;
     public Image hpBAR;
-    // public FloatinTextManager floatingTextManager;
-    // public Weapon weapon;
+    public FloatingTextManager floatingTextManager;
+    public Weapon weapon;
 
     // Логические данные
     public int gold;
-    public int souls;
 
     // Апгрейд оружия
-    //public bool TryUpgradeWeapon()
-    //{
-    //    // Максимального ли уровня оружие?
-    //    if (weaponPrices.Count <= weapon.weaponlvl)
-    //        return false;
+    public bool TryUpgradeWeapon()
+    {
+        // Максимального ли уровня оружие?
+        if (weaponPrices.Count <= weapon.weaponlvl)
+            return false;
 
-    //    if (gold >= weaponPrices[weapon.weaponlvl])
-    //    {
-    //        gold -= weaponPrices[weapon.weaponlvl];
-    //        weapon.UpgradeWeapon();
-    //        return true;
-    //    }
+        if (gold >= weaponPrices[weapon.weaponlvl])
+        {
+            gold -= weaponPrices[weapon.weaponlvl];
+            weapon.UpgradeWeapon();
+            return true;
+        }
 
-    //    return false;
-    //}
+        return false;
+    }
 
     public void SaveState(Scene sc, LoadSceneMode mode)
     {
@@ -61,7 +60,6 @@ public class GameManager : MonoBehaviour
 
         s += "0" + "|";
         s += gold.ToString() + "|";
-        s += souls.ToString() + "|";
         s += "0" + "|";
 
         PlayerPrefs.SetString("SaveState", s);
@@ -76,11 +74,10 @@ public class GameManager : MonoBehaviour
         // "0|10|15|2" - вид сейвов
 
         gold = int.Parse(data[1]);
-        souls = int.Parse(data[2]);
-        // weapon.weaponlvl = int.Parse(data[3]);
+        weapon.weaponlvl = int.Parse(data[2]);
     }
     public void ShowText(string msg, int fontSize, Color color, Vector3 position, Vector3 motion, float duration)
     {
-        // floatingTextManager.Show(msg, fontSize, color, position, motion, duration);
+        floatingTextManager.Show(msg, fontSize, color, position, motion, duration);
     }
 }

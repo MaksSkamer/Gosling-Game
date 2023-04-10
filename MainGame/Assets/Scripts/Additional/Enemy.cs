@@ -1,31 +1,36 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class Enemy : Mover
 {
     // Души и золото
     public int Gold = 1;
-    public int Souls = 1;
 
     // Переменные для расчёта дистанции между игроком и врагом
     public float triggerLength = 3f;
     public float chaseLength = 10f;
     protected bool chasing;
     private bool colidingWithPlayer;
-    public Transform playerTransform;
+    private Transform playerTransform;
     protected Vector3 startingposition;
 
     protected ContactFilter2D filter;
     protected Collider2D[] hits = new Collider2D[10];
+    private BoxCollider2D hitbox;
+    protected Animator anim;
 
     protected override void Start()
     {
         base.Start();
         startingposition = transform.position;
+        playerTransform = GameManager.instance.player.transform;
+        hitbox = transform.GetChild(0).GetComponent<BoxCollider2D>();
+        anim = GetComponent<Animator>();
     }
 
-    protected void FixedUpdate()
+    protected virtual void FixedUpdate()
     {
         if (Vector3.Distance(playerTransform.position, startingposition) < chaseLength)
         {
@@ -58,11 +63,19 @@ public class Enemy : Mover
             if (hits[i] == null)
                 continue;
 
-            if (hits[i].name == "Player")
+            if (hits[i].tag == "Figther" && hits[i].name == "Player")
             {
                 colidingWithPlayer = true;
             }
             hits[i] = null;
         }
+    }
+
+    protected override void Death()
+    {
+        Destroy(gameObject);
+
+        GameManager.instance.gold += Gold;
+        // GameManager.instance.ShowText("+" + Gold + " Gold", 25, Color.yellow, transform.position, Vector3.up * 40, 2.0f);
     }
 }

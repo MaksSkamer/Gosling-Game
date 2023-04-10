@@ -62,6 +62,7 @@
     <Compile Include="Assets\Scripts\Additional\Collectable.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerController.cs" />
     <Compile Include="Assets\Scripts\Player\Weapon.cs" />
+    <Compile Include="Assets\Scripts\Additional\EnemyHitbox.cs" />
     <Compile Include="Assets\Scripts\Environment\Camera\CameraFollow.cs" />
     <Compile Include="Assets\Scripts\Additional\Enemy.cs" />
     <Compile Include="Assets\Scripts\Additional\Collidable.cs" />

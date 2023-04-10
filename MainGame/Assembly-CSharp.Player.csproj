@@ -58,6 +58,7 @@
     <Analyzer Include="H:\Programms\Unity\Unity Hub\2023.1.0b10\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\Additional\GameManager.cs" />
     <Compile Include="Assets\Scripts\Additional\Collectable.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerController.cs" />
     <Compile Include="Assets\Scripts\Environment\Camera\CameraFollow.cs" />

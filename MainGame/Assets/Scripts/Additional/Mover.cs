@@ -4,18 +4,12 @@ using UnityEngine;
 
 public abstract class Mover : Fighter
 {
-    protected Vector3 moveVector;
-    protected BoxCollider2D boxColider;
+    protected Vector3 moveVector;    
     protected RaycastHit2D hit;
     
 
     public float Yspeed = 20f;
     public float Xspeed = 20f;   
-
-    protected virtual void Start()
-    {
-        boxColider = GetComponent<BoxCollider2D>();     
-    }
 
     protected virtual void UpdateMotor(Vector3 input)
     {

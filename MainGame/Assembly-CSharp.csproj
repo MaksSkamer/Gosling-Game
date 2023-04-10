@@ -61,10 +61,12 @@
     <Compile Include="Assets\Scripts\Additional\GameManager.cs" />
     <Compile Include="Assets\Scripts\Additional\Collectable.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerController.cs" />
+    <Compile Include="Assets\Scripts\UI\FloatingText.cs" />
     <Compile Include="Assets\Scripts\Player\Weapon.cs" />
     <Compile Include="Assets\Scripts\Additional\EnemyHitbox.cs" />
     <Compile Include="Assets\Scripts\Environment\Camera\CameraFollow.cs" />
     <Compile Include="Assets\Scripts\Additional\Enemy.cs" />
+    <Compile Include="Assets\Scripts\UI\FloatingTextManager.cs" />
     <Compile Include="Assets\Scripts\Additional\Collidable.cs" />
     <Compile Include="Assets\Scripts\Additional\Damage.cs" />
     <Compile Include="Assets\Scripts\Additional\interactive.cs" />

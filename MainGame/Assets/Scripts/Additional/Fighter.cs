@@ -15,6 +15,13 @@ public class Fighter : MonoBehaviour
 
     //Толчок
     protected Vector3 pushDirection;
+
+    protected BoxCollider2D boxColider;
+
+    protected virtual void Start()
+    {
+        boxColider = GetComponent<BoxCollider2D>();
+    }
     protected virtual void ReceiveDamage(Damage dmg)
     {
         if (Time.time - lastImmune > immuneTime)
@@ -22,9 +29,12 @@ public class Fighter : MonoBehaviour
             lastImmune = Time.time;
             hitpoint -= dmg.damageAmount;
             pushDirection = (transform.position - dmg.origin).normalized * dmg.pushForce;
-
+            
             // Визуальные эффекты
-            // GameManager.instance.ShowText("- " + dmg.damageAmount.ToString() + " HP", 25, Color.red, transform.position + new Vector3(0, 5, 0), Vector3.zero, 0.5f);
+            if(transform.name == "Player")
+                GameManager.instance.ShowText("- " + dmg.damageAmount.ToString() + " HP", 50, Color.red, transform.position + new Vector3(3,5,0), Vector3.up * 30, 0.5f);
+            else
+                GameManager.instance.ShowText("- " + dmg.damageAmount.ToString() + " HP", 50, Color.red, transform.position + new Vector3(8, 0, 0), Vector3.up * 30, 0.5f);
 
             if (hitpoint <= 0)
             {

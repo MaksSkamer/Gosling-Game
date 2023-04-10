@@ -75,7 +75,6 @@ public class Enemy : Mover
     {
         Destroy(gameObject);
 
-        GameManager.instance.gold += Gold;
-        // GameManager.instance.ShowText("+" + Gold + " Gold", 25, Color.yellow, transform.position, Vector3.up * 40, 2.0f);
+        GameManager.instance.gold += Gold;       
     }
 }

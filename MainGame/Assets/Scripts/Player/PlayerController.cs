@@ -28,7 +28,6 @@ public class PlayerController : Mover
             x = Input.GetAxisRaw("Horizontal");
             y = Input.GetAxisRaw("Vertical");
 
-            Debug.Log("Вектор х - " + moveVector.x);
             UpdateMotor(new Vector3(x, y, 0));
         }
         else {  }

@@ -13,7 +13,7 @@ public class Weapon : Collidable
 
     // Взмах
     private Animator anim;
-    private float cooldown = 1.5f;
+    private float cooldown = 0.5f;
     private float lastswing;
 
     protected override void Start()

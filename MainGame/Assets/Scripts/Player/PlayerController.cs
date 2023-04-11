@@ -53,6 +53,22 @@ public class PlayerController : Mover
                 rb.velocity = new Vector2(DashImpulse, rb.velocity.y);
             }
         }
+        else if (y < 0 && Input.GetKey(KeyCode.LeftShift) && EndDash == false)
+        {
+            StartCoroutine(Timer());
+            if (EndDash == false)
+            {
+                rb.velocity = new Vector2(rb.velocity.x, -DashImpulse);
+            }
+        }
+        else if (y > 0 && Input.GetKey(KeyCode.LeftShift) && EndDash == false)
+        {
+            StartCoroutine(Timer());
+            if (EndDash == false)
+            {
+                rb.velocity = new Vector2(rb.velocity.x, DashImpulse);
+            }
+        }
     }
     IEnumerator Timer()
     {

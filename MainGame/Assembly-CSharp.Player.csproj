@@ -67,6 +67,7 @@
     <Compile Include="Assets\Scripts\Environment\Camera\CameraFollow.cs" />
     <Compile Include="Assets\Scripts\Additional\Enemy.cs" />
     <Compile Include="Assets\Scripts\UI\FloatingTextManager.cs" />
+    <Compile Include="Assets\InternalAssets\Audio\WAV\testtttt.cs" />
     <Compile Include="Assets\Scripts\Additional\Collidable.cs" />
     <Compile Include="Assets\Scripts\Additional\Damage.cs" />
     <Compile Include="Assets\Scripts\Additional\interactive.cs" />

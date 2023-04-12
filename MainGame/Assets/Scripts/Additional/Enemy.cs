@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq.Expressions;
 using UnityEditor;
 using UnityEngine;
 
@@ -20,7 +21,8 @@ public class Enemy : Mover
     protected Collider2D[] hits = new Collider2D[10];
     private BoxCollider2D hitbox;
     protected Animator anim;
-
+    protected AudioSource a;
+    public AudioClip[] sound;
     protected override void Start()
     {
         base.Start();
@@ -28,10 +30,12 @@ public class Enemy : Mover
         playerTransform = GameManager.instance.player.transform;
         hitbox = transform.GetChild(0).GetComponent<BoxCollider2D>();
         anim = GetComponent<Animator>();
+        a = GetComponent<AudioSource>();
     }
 
     protected virtual void FixedUpdate()
     {
+        VolumeDistance(Vector3.Distance(playerTransform.position, transform.position));
         if (Vector3.Distance(playerTransform.position, startingposition) < chaseLength)
         {
             if (Vector3.Distance(playerTransform.position, startingposition) < triggerLength)
@@ -39,6 +43,7 @@ public class Enemy : Mover
 
             if (chasing)
             {
+                GameManager.instance.Sound(a, sound, 0);
                 if (!colidingWithPlayer)
                 {
                     UpdateMotor((playerTransform.position - transform.position).normalized);
@@ -71,6 +76,10 @@ public class Enemy : Mover
         }
     }
 
+    void VolumeDistance(float dist)
+    {
+        a.volume = (60-dist) / 60;
+    }
     protected override void Death()
     {
         Destroy(gameObject);

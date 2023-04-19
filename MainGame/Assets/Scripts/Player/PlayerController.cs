@@ -23,7 +23,8 @@ public class PlayerController : Mover
     }
     private void FixedUpdate()
     {
-        if(movementControl == false)
+        GameManager.instance.OnHitpointChange();
+        if (movementControl == false)
         {
             x = Input.GetAxisRaw("Horizontal");
             y = Input.GetAxisRaw("Vertical");

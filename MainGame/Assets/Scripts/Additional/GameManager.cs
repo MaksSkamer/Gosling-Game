@@ -30,7 +30,7 @@ public class GameManager : MonoBehaviour
 
     // —сылки на объекты
     public PlayerController player;
-    public Image hpBAR;
+    public Image hpBar;
     public SoundManager SoundManager;
     public FloatingTextManager floatingTextManager;
     public Weapon weapon;
@@ -53,6 +53,11 @@ public class GameManager : MonoBehaviour
         }
 
         return false;
+    }
+
+    public void OnHitpointChange()
+    {
+        hpBar.fillAmount = player.hitpoint / player.maxHitpoint;
     }
 
     public void SaveState(Scene sc, LoadSceneMode mode)

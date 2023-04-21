@@ -8,6 +8,7 @@ public class Enemy : Mover
 {
     // Души и золото
     public int Gold = 1;
+    public int Score = 1;
 
     // Переменные для расчёта дистанции между игроком и врагом
     public float triggerLength = 3f;
@@ -23,7 +24,7 @@ public class Enemy : Mover
     protected Animator anim;
     protected AudioSource a;
     public AudioClip[] sound;
-    protected override void Start()
+    protected virtual void Start()
     {
         base.Start();
         startingposition = transform.position;
@@ -84,6 +85,7 @@ public class Enemy : Mover
     {
         Destroy(gameObject);
 
-        GameManager.instance.gold += Gold;       
+        GameManager.instance.gold += Gold;
+        GameManager.instance.Score += Score;
     }
 }

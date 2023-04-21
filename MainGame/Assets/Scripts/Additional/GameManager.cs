@@ -37,7 +37,8 @@ public class GameManager : MonoBehaviour
 
     // Логические данные
     public int gold;
-
+    public int Score;
+    public bool DeathSc = false;
     // Апгрейд оружия
     public bool TryUpgradeWeapon()
     {
@@ -55,10 +56,10 @@ public class GameManager : MonoBehaviour
         return false;
     }
 
-    public void OnHitpointChange()
-    {
-        hpBar.fillAmount = player.hitpoint / player.maxHitpoint;
-    }
+    //public void OnHitpointChange()
+    //{
+    //    hpBar.fillAmount = player.hitpoint / player.maxHitpoint;
+    //}
 
     public void SaveState(Scene sc, LoadSceneMode mode)
     {

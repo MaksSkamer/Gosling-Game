@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerController : Mover
 {
+
     public float DashImpulse = 5000;
     private float DashTime = 0.15f;
     private float DashCD = 1f;
@@ -12,9 +13,12 @@ public class PlayerController : Mover
     private float x;
     private float y;
     private Rigidbody2D rb;
+    GameObject DeathMenu;
 
     protected override void Start()
-    {
+    {               
+        DeathMenu = GameObject.FindWithTag("DM");
+        DeathMenu.SetActive(false);
         base.Start();
         rb = GetComponent<Rigidbody2D>();
         DontDestroyOnLoad(gameObject);
@@ -23,7 +27,7 @@ public class PlayerController : Mover
     }
     private void FixedUpdate()
     {
-        GameManager.instance.OnHitpointChange();
+        //GameManager.instance.OnHitpointChange();
         if (movementControl == false)
         {
             x = Input.GetAxisRaw("Horizontal");
@@ -31,7 +35,7 @@ public class PlayerController : Mover
 
             UpdateMotor(new Vector3(x, y, 0));
         }
-        else {  }
+        else {  }      
 
         Dash();
     }
@@ -81,15 +85,17 @@ public class PlayerController : Mover
         rb.velocity = new Vector2(0,0);
         StartCoroutine(TimerCD());
     }
-
     IEnumerator TimerCD()
     {       
         yield return new WaitForSeconds(DashCD);
         EndDash = false;
-    }
-
+    }  
     protected override void Death()
     {
-        Destroy(gameObject);
+        GameManager.instance.DeathSc = true;
+        GameObject pl = GameObject.Find("Player");
+        pl.SetActive(false);
+        DeathMenu.SetActive(true);
+        Time.timeScale = 0f;        
     }
 }

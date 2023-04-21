@@ -18,13 +18,13 @@ public class Pause_menu : MonoBehaviour
 
     void Update()
     {
-       if(Input.GetKeyDown(KeyCode.Escape))
+       if(Input.GetKeyDown(KeyCode.Escape) && GameManager.instance.DeathSc == false)
         {
             if(GameIsPaused) 
                 Resume();
             else
                 Pause();
-        }
+        }      
     }
 
     public void Resume()

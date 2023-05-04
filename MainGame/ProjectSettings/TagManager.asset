@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Fighter
   - DM
+  - Boss
   layers:
   - Default
   - TransparentFX

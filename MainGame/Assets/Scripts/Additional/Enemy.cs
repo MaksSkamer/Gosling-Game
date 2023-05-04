@@ -29,7 +29,7 @@ public class Enemy : Mover
         base.Start();
         startingposition = transform.position;
         playerTransform = GameManager.instance.player.transform;
-        hitbox = transform.GetChild(0).GetComponent<BoxCollider2D>();
+        //hitbox = transform.GetChild(0).GetComponent<BoxCollider2D>();
         anim = GetComponent<Animator>();
         a = GetComponent<AudioSource>();
     }
@@ -44,7 +44,7 @@ public class Enemy : Mover
 
             if (chasing)
             {
-                GameManager.instance.Sound(a, sound, 0);
+           
                 if (!colidingWithPlayer)
                 {
                     UpdateMotor((playerTransform.position - transform.position).normalized);

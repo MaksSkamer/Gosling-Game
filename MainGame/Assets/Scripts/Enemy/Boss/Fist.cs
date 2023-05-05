@@ -15,7 +15,6 @@ public class Fist : MonoBehaviour
     private bool attack = false;
     private float lastpunch;
     private float cooldown = 5f;
-    private bool shimi_shimi_yaay = false;
     void Start()
     {
         anim = GetComponent<Animation>();
@@ -32,9 +31,8 @@ public class Fist : MonoBehaviour
             offset = Vector3.Distance(transform.position, player.transform.position) / 50f;
             input = player.transform.position - transform.position;
             input = new Vector3(input.x, input.y + 15, input.z);
-            shimi_shimi_yaay = true;
         }
-        if(transform.position != input && shimi_shimi_yaay)
+        if(transform.position != input)
         {
             Debug.Log("[");
             transform.Translate(input.x * Time.deltaTime * offset, input.y * Time.deltaTime * offset, 0);
@@ -51,9 +49,12 @@ public class Fist : MonoBehaviour
     void Punch()
     {
         Debug.Log("ÓÄàð");
-        // anim.Play("Punch");
-        attack= false;
-        shimi_shimi_yaay = false;
+        anim.SetTrigger("poop");
+        Invoke("Return",1f);
+        attack = false;
+    }
+    void Return()
+    {
         transform.Translate(startingposition.x * Time.deltaTime * offset, startingposition.y * Time.deltaTime * offset, 0);
     }
 

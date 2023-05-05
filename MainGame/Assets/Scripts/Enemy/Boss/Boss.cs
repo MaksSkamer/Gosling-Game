@@ -27,6 +27,12 @@ public class Boss : Enemy
     protected override void Death()
     {
         base.Death();
+        GameObject[] fistsDel = GameObject.FindGameObjectsWithTag("Boss");
+
+        foreach (GameObject fist in fistsDel)
+        {
+            Destroy(fist);
+        }
     }
 
 }

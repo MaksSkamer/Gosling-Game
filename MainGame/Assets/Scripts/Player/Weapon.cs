@@ -38,11 +38,21 @@ public class Weapon : Collidable
 
     protected override void OnCollide(Collider2D col)
     {
-        if (col.tag == "Fighter")
+        if (col.tag == "Fighter" || col.tag == "Boss")
         {
             if (col.name == "Player")
                 return;
 
+            if(col.tag == "Boss")
+            {
+                Damage dmgB = new Damage
+                {
+                    damageAmount = damagePoint,
+                    origin = transform.position,
+                    pushForce = 0,
+                };
+                col.SendMessage("ReceiveDamage", dmgB);
+            }
             // Создать новый наносящий урон объект, а затем отправить его в того кого бьём
             Damage dmg = new Damage
             {

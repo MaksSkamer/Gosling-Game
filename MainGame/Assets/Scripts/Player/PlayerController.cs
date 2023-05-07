@@ -5,8 +5,8 @@ using UnityEngine;
 public class PlayerController : Mover
 {
 
-    public float DashImpulse = 5000;
-    private float DashTime = 0.15f;
+    public float DashImpulse = 4000;
+    private float DashTime = 0.09f;
     private float DashCD = 1f;
     private bool EndDash;
     private bool movementControl;
@@ -15,6 +15,7 @@ public class PlayerController : Mover
     private Rigidbody2D rb;
     GameObject DeathMenu;
 
+    
     protected override void Start()
     {               
         DeathMenu = GameObject.FindWithTag("DM");
@@ -23,13 +24,14 @@ public class PlayerController : Mover
         rb = GetComponent<Rigidbody2D>();
         DontDestroyOnLoad(gameObject);
         EndDash = false;
-        movementControl= false;
+        movementControl= false;       
     }
     private void FixedUpdate()
     {
         //GameManager.instance.OnHitpointChange();
         if (movementControl == false)
         {
+            
             x = Input.GetAxisRaw("Horizontal");
             y = Input.GetAxisRaw("Vertical");
 
@@ -46,7 +48,7 @@ public class PlayerController : Mover
         {
             StartCoroutine(Timer());
             if (EndDash == false)
-            {
+            {               
                 rb.velocity = new Vector2(-DashImpulse, rb.velocity.y);
             }
         }

@@ -16,11 +16,14 @@ public class Weapon : Collidable
     private float cooldown = 0.5f;
     private float lastswing;
 
+    protected AudioSource a;
+    public AudioClip[] sound;
     protected override void Start()
     {
         base.Start();
         spriteRenderer = GetComponent<SpriteRenderer>();
         anim = GetComponent<Animator>();
+        a = GetComponent<AudioSource>();
     }
 
     protected override void Update()
@@ -31,6 +34,8 @@ public class Weapon : Collidable
             if (Time.time - lastswing > cooldown)
             {
                 lastswing = Time.time;
+                int randS = Random.Range(0, 3);
+                GameManager.instance.Sound(a, sound, randS);
                 Swing();
             }
         }
@@ -65,7 +70,7 @@ public class Weapon : Collidable
     }
 
     private void Swing()
-    {
+    {       
         anim.SetTrigger("Swing");
     }
 

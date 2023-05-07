@@ -58,15 +58,19 @@
     <Analyzer Include="H:\Programms\Unity\Unity Hub\2023.1.0b10\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\Player\Animation&amp;AudioControlller.cs" />
     <Compile Include="Assets\Scripts\Additional\GameManager.cs" />
     <Compile Include="Assets\Scripts\Additional\Collectable.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerController.cs" />
     <Compile Include="Assets\Scripts\UI\FloatingText.cs" />
     <Compile Include="Assets\Scripts\Additional\SoundManager.cs" />
     <Compile Include="Assets\Scripts\Player\Weapon.cs" />
+    <Compile Include="Assets\Scripts\Enemy\Boss\RightFist.cs" />
     <Compile Include="Assets\Scripts\Additional\EnemyHitbox.cs" />
+    <Compile Include="Assets\Scripts\Enemy\Boss\LeftFist.cs" />
     <Compile Include="Assets\Scripts\Environment\Camera\CameraFollow.cs" />
     <Compile Include="Assets\Scripts\Additional\Enemy.cs" />
+    <Compile Include="Assets\Scripts\Enemy\Boss\Laser.cs" />
     <Compile Include="Assets\Scripts\UI\FloatingTextManager.cs" />
     <Compile Include="Assets\Scripts\Enemy\Boss\Boss.cs" />
     <Compile Include="Assets\Scripts\UI\Pause_menu.cs" />

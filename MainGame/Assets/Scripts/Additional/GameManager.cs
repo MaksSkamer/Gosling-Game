@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
+        InvokeRepeating("FistChoose", 5f, 5f);
         if (GameManager.instance != null)
         {
             Destroy(gameObject);
@@ -39,6 +40,7 @@ public class GameManager : MonoBehaviour
     public int gold;
     public int Score;
     public bool DeathSc = false;
+    public int fch;
     // Апгрейд оружия
     public bool TryUpgradeWeapon()
     {
@@ -60,7 +62,10 @@ public class GameManager : MonoBehaviour
     //{
     //    hpBar.fillAmount = player.hitpoint / player.maxHitpoint;
     //}
-
+    protected void FistChoose()
+    {
+        fch = UnityEngine.Random.Range(0, 100);
+    }
     public void SaveState(Scene sc, LoadSceneMode mode)
     {
         string s = "";
@@ -90,5 +95,10 @@ public class GameManager : MonoBehaviour
     public void Sound(AudioSource a, AudioClip[] sound, int i)
     {
         SoundManager.PlaySound(a, sound, i);
+    }
+
+    public void SoundStop(AudioSource a)
+    {
+        SoundManager.StopSound(a);
     }
 }

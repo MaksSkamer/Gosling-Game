@@ -12,6 +12,8 @@ public class Pause_menu : MonoBehaviour
 
     public GameObject pauseMenu;
 
+    public GameObject SQLdb;
+
     public Image osu;
 
     int count = 0;

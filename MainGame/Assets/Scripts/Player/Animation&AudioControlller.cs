@@ -22,6 +22,7 @@ public class AnimationAudioControlller : MonoBehaviour
 
         if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.S))
         {
+            a.volume = 0.8f;
             anim.Play("Player_walk");
             animShad.Play("Player_shadow_motion");
             GameManager.instance.Sound(a, sound, 0);
@@ -34,6 +35,7 @@ public class AnimationAudioControlller : MonoBehaviour
 
         if(Input.GetKeyDown(KeyCode.LeftShift) && (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.S)) && !dashCD)
         {
+            a.volume = 0.6f;
             dashCD = true;
             Invoke("dashLock", 1f);
             a.clip = sound[1];

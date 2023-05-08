@@ -24,6 +24,7 @@ public class Weapon : Collidable
         spriteRenderer = GetComponent<SpriteRenderer>();
         anim = GetComponent<Animator>();
         a = GetComponent<AudioSource>();
+        a.volume = 0.5f;
     }
 
     protected override void Update()

@@ -37,6 +37,7 @@ public class GameManager : MonoBehaviour
     public Weapon weapon;
 
     // Логические данные
+    public string plName = "Maksi";
     public int gold;
     public int Score;
     public bool DeathSc = false;

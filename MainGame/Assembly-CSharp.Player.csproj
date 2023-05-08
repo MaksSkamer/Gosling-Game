@@ -79,6 +79,7 @@
     <Compile Include="Assets\Scripts\Additional\Damage.cs" />
     <Compile Include="Assets\Scripts\Enemy\Boss\Fist.cs" />
     <Compile Include="Assets\Scripts\Additional\interactive.cs" />
+    <Compile Include="Assets\Scripts\Additional\SQLconnection.cs" />
     <Compile Include="Assets\Scripts\Additional\Fighter.cs" />
     <Compile Include="Assets\Scripts\Additional\Mover.cs" />
   </ItemGroup>
@@ -299,8 +300,14 @@
     <Reference Include="nunit.framework">
       <HintPath>Library\PackageCache\com.unity.ext.nunit@2.0.3\net40\unity-custom\nunit.framework.dll</HintPath>
     </Reference>
+    <Reference Include="Mono.Data">
+      <HintPath>Assets\Plugins\Mono.Data.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.VisualScripting.Antlr3.Runtime">
       <HintPath>Library\PackageCache\com.unity.visualscripting@1.8.0\Runtime\VisualScripting.Flow\Dependencies\NCalc\Unity.VisualScripting.Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Data.Sqlite">
+      <HintPath>Assets\Plugins\Mono.Data.Sqlite.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
       <HintPath>H:\Programms\Unity\Unity Hub\2023.1.0b10\Editor\Data\NetStandard\ref\2.1.0\netstandard.dll</HintPath>
@@ -670,6 +677,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="Assembly-CSharp-firstpass.Player.csproj">
+      <Project>{0F5969D3-386A-014D-15CF-78019FE0B34E}</Project>
+      <Name>Assembly-CSharp-firstpass.Player</Name>
+    </ProjectReference>
     <ProjectReference Include="Unity.2D.Animation.Runtime.Player.csproj">
       <Project>{A6E4086D-CC22-E238-8ED6-E37CF9DE72FA}</Project>
       <Name>Unity.2D.Animation.Runtime.Player</Name>

@@ -64,10 +64,12 @@
     <Compile Include="Assets\Scripts\Player\PlayerController.cs" />
     <Compile Include="Assets\Scripts\UI\FloatingText.cs" />
     <Compile Include="Assets\Scripts\Additional\SoundManager.cs" />
+    <Compile Include="Assets\Scripts\Environment\Mine.cs" />
     <Compile Include="Assets\Scripts\Player\Weapon.cs" />
     <Compile Include="Assets\Scripts\Enemy\Boss\RightFist.cs" />
     <Compile Include="Assets\Scripts\Additional\EnemyHitbox.cs" />
     <Compile Include="Assets\CameraShake.cs" />
+    <Compile Include="Assets\Scripts\Environment\Destruction.cs" />
     <Compile Include="Assets\Scripts\Enemy\Boss\LeftFist.cs" />
     <Compile Include="Assets\Scripts\Environment\Camera\CameraFollow.cs" />
     <Compile Include="Assets\Scripts\Additional\Enemy.cs" />

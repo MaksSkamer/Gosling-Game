@@ -15,7 +15,7 @@ public class Enemy : Mover
     public float chaseLength = 10f;
     protected bool chasing;
     private bool colidingWithPlayer;
-    private Transform playerTransform;
+    protected Transform playerTransform;
     protected Vector3 startingposition;
 
     protected ContactFilter2D filter;

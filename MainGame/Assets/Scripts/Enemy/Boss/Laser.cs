@@ -12,7 +12,7 @@ public class Laser : MonoBehaviour
     private Animator animSBlow;
     private Animator animTrack;
     private Animator animRuby;
-
+    private Animator camAN;
     protected AudioSource a;
     public AudioClip[] sound;
 
@@ -25,6 +25,7 @@ public class Laser : MonoBehaviour
         animRuby = transform.GetChild(3).GetComponent<Animator>();
         a = GetComponent<AudioSource>();
         a.volume = 0.7f;
+        camAN = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Animator>();     
     }
 
     void Update()
@@ -40,7 +41,7 @@ public class Laser : MonoBehaviour
     }
 
     void LaserShoot()
-    {       
+    {
         anim.Play("Laser_attack");
         animFBlow.Play("FirstBlow");
         animTrack.Play("Track_motion");
@@ -49,6 +50,7 @@ public class Laser : MonoBehaviour
 
     void DefualtState()
     {
+        camAN.Play("Camera_idle");
         anim.Play("Laser_idle");
         animFBlow.Play("FirstBlow_idle");
         animTrack.Play("Track_idle");

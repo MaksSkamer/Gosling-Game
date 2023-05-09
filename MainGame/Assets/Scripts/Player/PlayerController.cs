@@ -31,27 +31,62 @@ public class PlayerController : Mover
         //GameManager.instance.OnHitpointChange();
         if (movementControl == false)
         {
-            
+            rb.velocity = new Vector2(0,0);
             x = Input.GetAxisRaw("Horizontal");
             y = Input.GetAxisRaw("Vertical");
 
             UpdateMotor(new Vector3(x, y, 0));
         }
         else {  }      
-
         Dash();
     }
 
     private void Dash()
     {
-        if (x < 0 && Input.GetKey(KeyCode.LeftShift) && EndDash == false)
+        if (x < 0 && y > 0 && Input.GetKey(KeyCode.LeftShift) && EndDash == false)
+        {
+            StartCoroutine(Timer());
+            if (EndDash == false)
+            {
+                rb.velocity = new Vector2(rb.velocity.x, DashImpulse);
+                rb.velocity = new Vector2(-DashImpulse, rb.velocity.y);
+            }
+        }
+        if (x < 0 && y < 0 && Input.GetKey(KeyCode.LeftShift) && EndDash == false)
+        {
+            StartCoroutine(Timer());
+            if (EndDash == false)
+            {
+                rb.velocity = new Vector2(rb.velocity.x, -DashImpulse);
+                rb.velocity = new Vector2(-DashImpulse, rb.velocity.y);
+            }
+        }
+        if (x > 0 && y > 0 && Input.GetKey(KeyCode.LeftShift) && EndDash == false)
+        {
+            StartCoroutine(Timer());
+            if (EndDash == false)
+            {
+                rb.velocity = new Vector2(rb.velocity.x, DashImpulse);
+                rb.velocity = new Vector2(DashImpulse, rb.velocity.y);
+            }
+        }
+        if (x > 0 && y < 0 && Input.GetKey(KeyCode.LeftShift) && EndDash == false)
+        {
+            StartCoroutine(Timer());
+            if (EndDash == false)
+            {
+                rb.velocity = new Vector2(rb.velocity.x, -DashImpulse);
+                rb.velocity = new Vector2(DashImpulse, rb.velocity.y);
+            }
+        }
+        else if (x < 0 && Input.GetKey(KeyCode.LeftShift) && EndDash == false)
         {
             StartCoroutine(Timer());
             if (EndDash == false)
             {               
                 rb.velocity = new Vector2(-DashImpulse, rb.velocity.y);
             }
-        }
+        }        
         else if (x > 0 && Input.GetKey(KeyCode.LeftShift) && EndDash == false)
         {
             StartCoroutine(Timer());

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerController : Mover
 {
@@ -12,10 +13,13 @@ public class PlayerController : Mover
     private bool movementControl;
     private float x;
     private float y;
+    private float MaxCdDash = 1f;
+    private float CdDash = 1f;
     private Rigidbody2D rb;
     GameObject DeathMenu;
+    public Image DashUIBar;
 
-    
+
     protected override void Start()
     {               
         DeathMenu = GameObject.FindWithTag("DM");
@@ -28,7 +32,8 @@ public class PlayerController : Mover
     }
     private void FixedUpdate()
     {
-        //GameManager.instance.OnHitpointChange();
+        GameManager.instance.OnHitpointChange();
+        DashUI();
         if (movementControl == false)
         {
             rb.velocity = new Vector2(0,0);
@@ -40,11 +45,25 @@ public class PlayerController : Mover
         else {  }      
         Dash();
     }
+    public void DashUI()
+    {
+        if (CdDash < MaxCdDash)
+        {
+            CdDash += Time.deltaTime;
+            float scale = CdDash / MaxCdDash;
+            DashUIBar.fillAmount = scale;
+            Debug.Log("кулдаун"); Debug.Log(CdDash);
+            Debug.Log("максимальный кд"); Debug.Log(CdDash);
+        }
+
+    }
+
 
     private void Dash()
     {
         if (x < 0 && y > 0 && Input.GetKey(KeyCode.LeftShift) && EndDash == false)
         {
+            CDDash();
             StartCoroutine(Timer());
             if (EndDash == false)
             {
@@ -54,6 +73,7 @@ public class PlayerController : Mover
         }
         if (x < 0 && y < 0 && Input.GetKey(KeyCode.LeftShift) && EndDash == false)
         {
+            CDDash();
             StartCoroutine(Timer());
             if (EndDash == false)
             {
@@ -63,6 +83,7 @@ public class PlayerController : Mover
         }
         if (x > 0 && y > 0 && Input.GetKey(KeyCode.LeftShift) && EndDash == false)
         {
+            CDDash();
             StartCoroutine(Timer());
             if (EndDash == false)
             {
@@ -72,6 +93,7 @@ public class PlayerController : Mover
         }
         if (x > 0 && y < 0 && Input.GetKey(KeyCode.LeftShift) && EndDash == false)
         {
+            CDDash();
             StartCoroutine(Timer());
             if (EndDash == false)
             {
@@ -81,6 +103,7 @@ public class PlayerController : Mover
         }
         else if (x < 0 && Input.GetKey(KeyCode.LeftShift) && EndDash == false)
         {
+            CDDash();
             StartCoroutine(Timer());
             if (EndDash == false)
             {               
@@ -89,6 +112,7 @@ public class PlayerController : Mover
         }        
         else if (x > 0 && Input.GetKey(KeyCode.LeftShift) && EndDash == false)
         {
+            CDDash();
             StartCoroutine(Timer());
             if (EndDash == false)
             {
@@ -97,6 +121,7 @@ public class PlayerController : Mover
         }
         else if (y < 0 && Input.GetKey(KeyCode.LeftShift) && EndDash == false)
         {
+            CDDash();
             StartCoroutine(Timer());
             if (EndDash == false)
             {
@@ -105,12 +130,17 @@ public class PlayerController : Mover
         }
         else if (y > 0 && Input.GetKey(KeyCode.LeftShift) && EndDash == false)
         {
+            CDDash();
             StartCoroutine(Timer());
             if (EndDash == false)
             {
                 rb.velocity = new Vector2(rb.velocity.x, DashImpulse);
             }
         }
+    }
+    private void CDDash()
+    {
+        CdDash = 0;
     }
     IEnumerator Timer()
     {

@@ -1,13 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Boss : Enemy
 {
+    public RectTransform bossHitpointBar;
+    public Image FrameGood;
+    public Image FrameBad;
     private float lastRandT;
     protected override void Start()
     {
         base.Start();
+        FrameBad.enabled = false;
+        FrameGood.enabled = false;
         Yspeed = 0;
         Xspeed = 0;
         a.volume = 0.5f;
@@ -15,6 +21,7 @@ public class Boss : Enemy
 
     void Update()
     {
+        OnBossHitpointChange();
         int randT = Random.Range(0, 15);
 
         if (Time.time - lastRandT > randT)
@@ -29,6 +36,21 @@ public class Boss : Enemy
         //    Death();
     }
 
+    public void OnBossHitpointChange()
+    {
+        float ratio = (float)hitpoint / (float)maxHitpoint;
+        bossHitpointBar.localScale = new Vector3(ratio, 1, 1);
+        if(hitpoint>(40*(maxHitpoint / 100)))
+        {
+            FrameGood.enabled = true;
+        }
+        else
+        {
+            FrameGood.enabled = false;
+            FrameBad.enabled = true;
+        }
+
+    }
     void BossAttack()
     {
         GameObject Urmom;

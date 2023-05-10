@@ -31,9 +31,9 @@ public class GameManager : MonoBehaviour
 
     // —сылки на объекты
     public PlayerController player;
-    public Image hpBar;
     public SoundManager SoundManager;
     public FloatingTextManager floatingTextManager;
+    public RectTransform hitpointBar;
     public Weapon weapon;
 
     // Ћогические данные
@@ -59,10 +59,12 @@ public class GameManager : MonoBehaviour
         return false;
     }
 
-    //public void OnHitpointChange()
-    //{
-    //    hpBar.fillAmount = player.hitpoint / player.maxHitpoint;
-    //}
+   
+    public void OnHitpointChange()
+    {
+        float ratio = (float)player.hitpoint / (float)player.maxHitpoint;
+        hitpointBar.localScale = new Vector3(ratio, 1, 1);
+    }
     protected void FistChoose()
     {
         fch = UnityEngine.Random.Range(0, 100);

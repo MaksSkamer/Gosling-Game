@@ -41,6 +41,8 @@ public class PlayerController : Mover
             y = Input.GetAxisRaw("Vertical");
 
             UpdateMotor(new Vector3(x, y, 0));
+
+
         }
         else {  }      
         Dash();
@@ -52,12 +54,8 @@ public class PlayerController : Mover
             CdDash += Time.deltaTime;
             float scale = CdDash / MaxCdDash;
             DashUIBar.fillAmount = scale;
-            Debug.Log("кулдаун"); Debug.Log(CdDash);
-            Debug.Log("максимальный кд"); Debug.Log(CdDash);
         }
-
     }
-
 
     private void Dash()
     {
@@ -165,4 +163,5 @@ public class PlayerController : Mover
         DeathMenu.SetActive(true);
         Time.timeScale = 0f;        
     }
+
 }

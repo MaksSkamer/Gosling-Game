@@ -32,7 +32,7 @@ public class SQLconnection : MonoBehaviour
                             "VALUES ('" + PLname + "', " + PLgold + ", " + PLscore + ")";
         dbcmd.CommandText = SQL_Query;
         reader = dbcmd.ExecuteReader();
-        while(reader.Read()) 
+        while (reader.Read())
         {
 
         }
@@ -43,7 +43,6 @@ public class SQLconnection : MonoBehaviour
         dbcmd = null;
         dbcon.Close();
         dbcon = null;
-        Debug.Log("Должно было сработать");
     }
 
     public void ReadOut()
@@ -81,6 +80,5 @@ public class SQLconnection : MonoBehaviour
         dbcmd = null;
         dbcon.Close();
         dbcon = null;
-        Debug.Log("Должно было сработать");
     }
 }

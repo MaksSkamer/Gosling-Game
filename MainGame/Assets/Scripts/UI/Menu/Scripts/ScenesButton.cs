@@ -14,7 +14,6 @@ public class ScenesButton : MonoBehaviour
     }
     public void Exit()
     {
-        Debug.Log("exit");
         GameManager.instance.Sound(a, sound, 0);
         Application.Quit();
     }

@@ -42,10 +42,10 @@ public class Laser : MonoBehaviour
 
     void LaserShoot()
     {
-        anim.Play("Laser_attack");
+        anim.Play("Laser_attack_small");
         animFBlow.Play("FirstBlow");
-        animTrack.Play("Track_motion");
-        animSBlow.Play("EndBlow");
+        animTrack.Play("Track_motion_small");
+        animSBlow.Play("EndBlow_small");
     }
 
     void DefualtState()

@@ -63,6 +63,7 @@
     <Compile Include="Assets\Scripts\Additional\GameManager.cs" />
     <Compile Include="Assets\Scripts\Additional\Collectable.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerController.cs" />
+    <Compile Include="Assets\Scripts\Enemy\Brabir.cs" />
     <Compile Include="Assets\Scripts\UI\FloatingText.cs" />
     <Compile Include="Assets\Scripts\Additional\SoundManager.cs" />
     <Compile Include="Assets\Scripts\Environment\Mine.cs" />
@@ -81,11 +82,15 @@
     <Compile Include="Assets\CaneraIDLE.cs" />
     <Compile Include="Assets\Scripts\Enemy\Boss\Boss.cs" />
     <Compile Include="Assets\Scripts\UI\Pause_menu.cs" />
+    <Compile Include="Assets\Scripts\Additional\SpriteSorter.cs" />
     <Compile Include="Assets\Scripts\Additional\Collidable.cs" />
     <Compile Include="Assets\Scripts\UI\Menu\Scripts\ScenesButton.cs" />
     <Compile Include="Assets\Scripts\Additional\SpawnManager.cs" />
     <Compile Include="Assets\Scripts\Additional\Damage.cs" />
+    <Compile Include="Assets\Scripts\Enemy\Slime.cs" />
     <Compile Include="Assets\Scripts\Enemy\Boss\Fist.cs" />
+    <Compile Include="Assets\Scripts\Environment\Camera\CameraAudioController.cs" />
+    <Compile Include="Assets\Scripts\Enemy\Skeleton.cs" />
     <Compile Include="Assets\Scripts\Enemy\Spider.cs" />
     <Compile Include="Assets\Scripts\Additional\interactive.cs" />
     <Compile Include="Assets\Scripts\Additional\SQLconnection.cs" />

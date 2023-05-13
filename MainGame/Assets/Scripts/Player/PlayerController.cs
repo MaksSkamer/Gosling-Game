@@ -22,6 +22,7 @@ public class PlayerController : Mover
 
     protected override void Start()
     {               
+        
         DeathMenu = GameObject.FindWithTag("DM");
         DeathMenu.SetActive(false);
         base.Start();

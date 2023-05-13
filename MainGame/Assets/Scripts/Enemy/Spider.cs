@@ -11,6 +11,8 @@ public class Spider : Enemy
     private Vector2 lockpos;
     public float dashImpulse;
     private Rigidbody2D rb;
+    private float screamCD = 7f;
+    private float lastScream;
     protected void Start()
     {
         base.Start();
@@ -25,7 +27,21 @@ public class Spider : Enemy
             rb.velocity = new Vector2(0, 0);
         }
         if (chasing)
-            // GameManager.instance.Sound(a, sound, 0);
+        {
+            GameManager.instance.Sound(a, sound, 0);
+            if (Time.time - lastScream > screamCD)
+            {
+                lastScream= Time.time;
+                if (GameManager.instance.fch > 50)
+                {
+                    a.clip = sound[4];
+                    GameManager.instance.Sound(a, sound, 4);
+                }
+            }
+            
+                
+        }
+            
 
         if (Vector3.Distance(playerTransform.position, transform.position) <= 5 && !attack)
         {
@@ -53,6 +69,9 @@ public class Spider : Enemy
 
     void Dash()
     {
+        int rand = Random.Range(1, 3);
+        a.clip = sound[rand];
+        GameManager.instance.Sound(a, sound, rand);
         Invoke("dashLock", 0.05f);
         lockpoz = false;
         if (moveVector.x < 0 && !Enddash)

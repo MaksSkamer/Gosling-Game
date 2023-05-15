@@ -9,6 +9,8 @@ public class Boss : Enemy
     public Image FrameGood;
     public Image FrameBad;
     private float lastRandT;
+    public GameObject BossDeath;
+    private SpriteRenderer grassie;
     protected override void Start()
     {
         base.Start();
@@ -17,6 +19,7 @@ public class Boss : Enemy
         Yspeed = 0;
         Xspeed = 0;
         a.volume = 0.5f;
+        grassie = transform.GetChild(0).GetComponent<SpriteRenderer>();
     }
 
     void Update()
@@ -58,13 +61,29 @@ public class Boss : Enemy
 
     protected override void Death()
     {
-        base.Death();
+        sprite.enabled = false;
+        grassie.enabled = false;
+
         GameObject[] fistsDel = GameObject.FindGameObjectsWithTag("Boss cock");
 
         foreach (GameObject fist in fistsDel)
         {
             Destroy(fist);
         }
+
+        a.volume = 1f;
+        a.clip = sound[2];
+        GameManager.instance.Sound(a, sound, 2);
+        Invoke("Destruct", 5f);
+
+        BossDeath = Instantiate(BossDeath) as GameObject;
+        BossDeath.transform.position = transform.position;        
     }
 
+    void Destruct()
+    {
+        Destroy(gameObject);
+        GameManager.instance.gold += Gold;
+        GameManager.instance.Score += Score;
+    }
 }

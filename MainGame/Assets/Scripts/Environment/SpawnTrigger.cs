@@ -28,6 +28,7 @@ public class SpawnTrigger : Collidable
                 obj.SetActive(true);
             }
         }
+        Destroy(gameObject);
     }
 }
 

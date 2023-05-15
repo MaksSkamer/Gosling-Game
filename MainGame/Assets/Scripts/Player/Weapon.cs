@@ -71,7 +71,8 @@ public class Weapon : Collidable
     }
 
     private void Swing()
-    {       
+    {
+        anim.speed = 1f;
         anim.SetTrigger("Swing");
     }
 

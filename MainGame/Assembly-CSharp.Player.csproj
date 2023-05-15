@@ -78,6 +78,7 @@
     <Compile Include="Assets\Scripts\UI\Menu\Scripts\StartScript.cs" />
     <Compile Include="Assets\Scripts\Additional\Enemy.cs" />
     <Compile Include="Assets\Scripts\Enemy\Boss\Laser.cs" />
+    <Compile Include="Assets\Scripts\Player\WeaponAnimationController.cs" />
     <Compile Include="Assets\Scripts\UI\FloatingTextManager.cs" />
     <Compile Include="Assets\CaneraIDLE.cs" />
     <Compile Include="Assets\Scripts\Enemy\Boss\Boss.cs" />

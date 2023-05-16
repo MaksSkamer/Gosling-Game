@@ -22,8 +22,7 @@ public class Enemy : Mover
     protected Collider2D[] hits = new Collider2D[10];
     private BoxCollider2D hitbox;
     protected Animator anim;
-    protected AudioSource a;
-    public AudioClip[] sound;
+    
     protected virtual void Start()
     {
         base.Start();
@@ -31,7 +30,6 @@ public class Enemy : Mover
         playerTransform = GameManager.instance.player.transform;
         //hitbox = transform.GetChild(0).GetComponent<BoxCollider2D>();
         anim = GetComponent<Animator>();
-        a = GetComponent<AudioSource>();
     }
 
     protected virtual void FixedUpdate()

@@ -44,7 +44,7 @@ public class Weapon : Collidable
 
     protected override void OnCollide(Collider2D col)
     {
-        if (col.tag == "Fighter" || col.tag == "Boss")
+        if (col.tag == "Fighter" || col.tag == "Boss" || col.tag == "Spider" || col.tag == "Skeleton" || col.tag == "Brabir")
         {
             if (col.name == "Player")
                 return;

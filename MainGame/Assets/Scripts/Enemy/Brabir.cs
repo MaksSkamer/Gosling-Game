@@ -11,10 +11,14 @@ public class Brabir : Enemy
     private Vector2 lockpos;
     private bool Dead = false;
     private Animator potAnim;
+    private BoxCollider2D colider;
+    private BoxCollider2D Childcolider;
     protected void Start()
     {
         base.Start();
         potAnim = transform.GetChild(0).GetComponent<Animator>();
+        colider = GetComponent<BoxCollider2D>();
+        Childcolider = transform.GetChild(0).GetComponent<BoxCollider2D>();
     }
 
     protected override void FixedUpdate()
@@ -38,7 +42,7 @@ public class Brabir : Enemy
             int randPot = Random.Range(4, 5);
             GameManager.instance.Sound(a, sound, randPot);
         }
-        else if(!lockpoz && !Dead)
+        else if(!lockpoz && !Dead && chasing)
         {
             potAnim.Play("Brabir_potion_idle");
             anim.Play("Brabir_walk");
@@ -55,11 +59,14 @@ public class Brabir : Enemy
                 GameManager.instance.Sound(a, sound, 6);
             }
         }
+
+       if(!chasing && !Dead)
+            anim.Play("Brabir_idle");
     }
     void NormalMode()
     {
-        Yspeed = 4;
-        Xspeed = 3;
+        Yspeed = 7;
+        Xspeed = 5;
         attack = false;
         lockpoz = false;
     }
@@ -77,6 +84,8 @@ public class Brabir : Enemy
     protected override void Death()
     {
         Dead = true;
+        colider.enabled = false;
+        Childcolider.enabled = false;
         sprite.enabled= false;       
         chasing = false;
         Yspeed = 0;

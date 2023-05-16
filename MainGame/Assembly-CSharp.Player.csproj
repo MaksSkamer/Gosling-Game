@@ -79,8 +79,10 @@
     <Compile Include="Assets\Scripts\Additional\Enemy.cs" />
     <Compile Include="Assets\Scripts\Enemy\Boss\Laser.cs" />
     <Compile Include="Assets\Scripts\Player\WeaponAnimationController.cs" />
+    <Compile Include="Assets\Scripts\Enemy\Dwarf.cs" />
     <Compile Include="Assets\Scripts\UI\FloatingTextManager.cs" />
     <Compile Include="Assets\CaneraIDLE.cs" />
+    <Compile Include="Assets\Scripts\Environment\SpawnMobeYtigger.cs" />
     <Compile Include="Assets\Scripts\Enemy\Boss\Boss.cs" />
     <Compile Include="Assets\Scripts\UI\Pause_menu.cs" />
     <Compile Include="Assets\Scripts\Additional\SpriteSorter.cs" />

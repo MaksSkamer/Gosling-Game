@@ -10,11 +10,15 @@ public class Skeleton : Enemy
     private float lastSound;
     private SpriteRenderer spritesh;
     private bool Dead = false;
+    private BoxCollider2D colider;
+    private BoxCollider2D Childcolider;
     protected void Start()
     {
         base.Start();
         shadow = transform.GetChild(1).GetComponent<Animator>();
         spritesh = transform.GetChild(1).GetComponent<SpriteRenderer>();
+        colider = GetComponent<BoxCollider2D>();
+        Childcolider = transform.GetChild(0).GetComponent<BoxCollider2D>();
     }
 
     protected override void FixedUpdate()
@@ -28,7 +32,7 @@ public class Skeleton : Enemy
         anim.Play("Skeleton_walk");
         if (Vector3.Distance(playerTransform.position, transform.position) <= 15 && !Dead)
         {
-            a.clip = sound[1];
+            a.clip = sound[0];
             GameManager.instance.Sound(a, sound, 1);
             Yspeed = 19;
             Xspeed = 17;
@@ -71,6 +75,8 @@ public class Skeleton : Enemy
     protected override void Death()
     {
         Dead = true;
+        colider.enabled = false;
+        Childcolider.enabled = false;
         chasing = false;
         Yspeed = 0;
         Xspeed = 0;

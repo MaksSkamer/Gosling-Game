@@ -17,8 +17,18 @@ public class GameManager : MonoBehaviour
             return;
         }
         instance = this;
-        SceneManager.sceneLoaded += LoadState;
+        //SceneManager.sceneLoaded += LoadState;
         DontDestroyOnLoad(gameObject);
+        
+    }
+    private void Start()
+    {
+        RenamePL();
+    }
+
+    public void RenamePL()
+    {
+        plName = playerNamed.ReturnName();
     }
 
     // Ресурсы  
@@ -30,34 +40,34 @@ public class GameManager : MonoBehaviour
     public List<int> goldTable;
 
     // Ссылки на объекты
+    public PlayerNamed playerNamed;
     public PlayerController player;
     public SoundManager SoundManager;
     public FloatingTextManager floatingTextManager;
     public RectTransform hitpointBar;
-    public Weapon weapon;
 
     // Логические данные
-    public string plName = "Maksi";
+    public string plName;
     public int gold;
     public int Score;
     public bool DeathSc = false;
     public int fch;
     // Апгрейд оружия
-    public bool TryUpgradeWeapon()
-    {
-        // Максимального ли уровня оружие?
-        if (weaponPrices.Count <= weapon.weaponlvl)
-            return false;
+    //public bool TryUpgradeWeapon()
+    //{
+    //    // Максимального ли уровня оружие?
+    //    if (weaponPrices.Count <= weapon.weaponlvl)
+    //        return false;
 
-        if (gold >= weaponPrices[weapon.weaponlvl])
-        {
-            gold -= weaponPrices[weapon.weaponlvl];
-            weapon.UpgradeWeapon();
-            return true;
-        }
+    //    if (gold >= weaponPrices[weapon.weaponlvl])
+    //    {
+    //        gold -= weaponPrices[weapon.weaponlvl];
+    //        weapon.UpgradeWeapon();
+    //        return true;
+    //    }
 
-        return false;
-    }
+    //    return false;
+    //}
 
    
     public void OnHitpointChange()
@@ -79,18 +89,18 @@ public class GameManager : MonoBehaviour
 
         PlayerPrefs.SetString("SaveState", s);
     }
-    public void LoadState(Scene sc, LoadSceneMode mode)
-    {
-        SceneManager.sceneLoaded -= LoadState;
-        if (!PlayerPrefs.HasKey("SaveState"))
-            return;
+    //public void LoadState(Scene sc, LoadSceneMode mode)
+    //{
+    //    SceneManager.sceneLoaded -= LoadState;
+    //    if (!PlayerPrefs.HasKey("SaveState"))
+    //        return;
 
-        string[] data = PlayerPrefs.GetString("SaveState").Split('|');
-        // "0|10|15|2" - вид сейвов
+    //    string[] data = PlayerPrefs.GetString("SaveState").Split('|');
+    //    // "0|10|15|2" - вид сейвов
 
-        gold = int.Parse(data[1]);
-        weapon.weaponlvl = int.Parse(data[2]);
-    }
+    //    gold = int.Parse(data[1]);
+    //    weapon.weaponlvl = int.Parse(data[2]);
+    //}
     public void ShowText(string msg, int fontSize, Color color, Vector3 position, Vector3 motion, float duration)
     {
         floatingTextManager.Show(msg, fontSize, color, position, motion, duration);

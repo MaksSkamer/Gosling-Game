@@ -4,17 +4,13 @@ using UnityEngine;
 
 public class StartScript : MonoBehaviour
 {
-    protected AudioSource a;
-    public AudioClip[] sound;
-    void Start()
+    public void Awake()
     {
-        //a = GetComponent<AudioSource>();
-        //InvokeRepeating("Do", 0, 3f);
+        DontDestroyOnLoad(gameObject);
     }
-
-    private void Do()
+    public void Start()
     {
-        GameManager.instance.Sound(a, sound, 0);
+        enabled = false;
     }
 
 }

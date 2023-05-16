@@ -162,7 +162,9 @@ public class PlayerController : Mover
         GameObject pl = GameObject.Find("Player");
         pl.SetActive(false);
         DeathMenu.SetActive(true);
-        Time.timeScale = 0f;        
+        Time.timeScale = 0f;
+        GameManager.instance.RenamePL();
+        Debug.Log(GameManager.instance.plName);
     }
 
 }

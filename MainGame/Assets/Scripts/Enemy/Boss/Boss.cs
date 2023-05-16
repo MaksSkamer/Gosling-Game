@@ -5,21 +5,29 @@ using UnityEngine.UI;
 
 public class Boss : Enemy
 {
+    public static Boss instance;
     public RectTransform bossHitpointBar;
     public Image FrameGood;
     public Image FrameBad;
+    public Image bossHpbar;
     private float lastRandT;
     public GameObject BossDeath;
     private SpriteRenderer grassie;
-    protected override void Start()
+
+    protected void Start()
     {
+        Debug.Log("dsadasd");
         base.Start();
-        FrameBad.enabled = false;
-        FrameGood.enabled = false;
+        EnableHPBar(); 
         Yspeed = 0;
         Xspeed = 0;
         a.volume = 0.5f;
         grassie = transform.GetChild(0).GetComponent<SpriteRenderer>();
+    }
+    public void OnEnable()
+    {
+        DisableHPBar();
+        
     }
 
     void Update()
@@ -37,6 +45,20 @@ public class Boss : Enemy
         //    BossAttack();
         //else if (42 < 3)
         //    Death();
+    }
+    public void DisableHPBar()
+    {
+        bossHpbar.enabled = false;
+        FrameBad.enabled = false;
+        FrameGood.enabled = false;
+        bossHitpointBar.transform.Rotate(0.0f,90.0f,0.0f);
+    }
+    public void EnableHPBar()
+    {
+        bossHpbar.enabled = true;
+        FrameBad.enabled = true;
+        FrameGood.enabled = true;
+        bossHitpointBar.transform.Rotate(0.0f, 180.0f, 0.0f);
     }
 
     public void OnBossHitpointChange()

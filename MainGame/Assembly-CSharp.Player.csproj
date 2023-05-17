@@ -97,6 +97,8 @@
     <Compile Include="Assets\Scripts\Enemy\Spider.cs" />
     <Compile Include="Assets\Scripts\Additional\interactive.cs" />
     <Compile Include="Assets\Scripts\Additional\SQLconnection.cs" />
+    <Compile Include="Assets\Scripts\Environment\Camera\CameraMusic.cs" />
+    <Compile Include="Assets\Scripts\UI\Menu\Scripts\PlayerNamed.cs" />
     <Compile Include="Assets\Scripts\Additional\Fighter.cs" />
     <Compile Include="Assets\Scripts\Additional\Mover.cs" />
   </ItemGroup>

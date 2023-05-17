@@ -6,6 +6,8 @@ public class SpawnTrigger : Collidable
 {
     GameObject[] BossObj;
     GameObject Bos;
+    public CameraFollow Camera;
+    private int countEnter;
     protected override void Start()
     {
         base.Start();
@@ -19,16 +21,25 @@ public class SpawnTrigger : Collidable
     }
     protected override void OnCollide(Collider2D col)
     {
-        if(col.name == "Player")
+        countEnter++;
+        if (countEnter == 1)
         {
-            
-            Bos.SetActive(true);
-            foreach (GameObject obj in BossObj)
+            Camera.Onplayer = false;
+            if (col.name == "Player")
             {
-                obj.SetActive(true);
+                Invoke("DoorLock", 2f);
+                Bos.SetActive(true);
+                foreach (GameObject obj in BossObj)
+                {
+                    obj.SetActive(true);
+                }
             }
-        }
-        Destroy(gameObject);
+        }                
+    }
+
+    void DoorLock()
+    {
+        boxColider.isTrigger = false;
     }
 }
 

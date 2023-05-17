@@ -5,14 +5,16 @@ using UnityEngine;
 
 public class CaneraIDLE : StateMachineBehaviour
 {
-
-    private Transform target;
-    private Transform transform;
+   
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
+
+    public override void OnStateMachineEnter(Animator animator, int stateMachinePathHash)
+    {
+        
+    }
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        target = GameObject.Find("Player").GetComponent<Transform>();
-        transform = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Transform>();
+             
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
@@ -30,7 +32,7 @@ public class CaneraIDLE : StateMachineBehaviour
     // OnStateMove is called right after Animator.OnAnimatorMove()
     override public void OnStateMove(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        transform.transform.position = new Vector3(target.transform.position.x, target.transform.position.y, transform.position.z);
+         
     }
 
     // OnStateIK is called right after Animator.OnAnimatorIK()

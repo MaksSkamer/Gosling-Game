@@ -73,6 +73,9 @@ public class Fighter : MonoBehaviour
                 GameManager.instance.Sound(a, sound, randBR);
                 GameManager.instance.ShowText("- " + dmg.damageAmount.ToString() + " HP", 30, Color.red, transform.position + new Vector3(8, 0, 0), Vector3.up * 30, 0.5f);
             }
+            else
+                GameManager.instance.ShowText("- " + dmg.damageAmount.ToString() + " HP", 30, Color.red, transform.position + new Vector3(8, 0, 0), Vector3.up * 30, 0.5f);
+
             if (hitpoint <= 0)
             {
                 hitpoint = 0;

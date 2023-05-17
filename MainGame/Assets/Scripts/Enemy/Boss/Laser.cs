@@ -24,8 +24,7 @@ public class Laser : MonoBehaviour
         animTrack = transform.GetChild(2).GetComponent<Animator>();
         animRuby = transform.GetChild(3).GetComponent<Animator>();
         a = GetComponent<AudioSource>();
-        a.volume = 0.7f;
-        camAN = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Animator>();     
+        a.volume = 0.7f;   
     }
 
     void Update()
@@ -50,7 +49,6 @@ public class Laser : MonoBehaviour
 
     void DefualtState()
     {
-        camAN.Play("Camera_idle");
         anim.Play("Laser_idle");
         animFBlow.Play("FirstBlow_idle");
         animTrack.Play("Track_idle");

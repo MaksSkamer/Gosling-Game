@@ -32,7 +32,7 @@ public class Skeleton : Enemy
         anim.Play("Skeleton_walk");
         if (Vector3.Distance(playerTransform.position, transform.position) <= 15 && !Dead)
         {
-            a.clip = sound[0];
+            a.clip = sound[1];
             GameManager.instance.Sound(a, sound, 1);
             Yspeed = 19;
             Xspeed = 17;

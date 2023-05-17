@@ -23,7 +23,7 @@ public class SpawnMobeYtigger : Collidable
         {
             if (col.name == "Player")
             {
-                Invoke("DoorLock", 1f);
+                Invoke("DoorLock", 2f);
                 foreach (GameObject obj in Mobs)
                 {
                     obj.SetActive(true);

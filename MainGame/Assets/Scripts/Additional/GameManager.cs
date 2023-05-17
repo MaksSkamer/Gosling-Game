@@ -21,10 +21,7 @@ public class GameManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
         
     }
-    private void Start()
-    {
-        RenamePL();
-    }
+  
 
     public void RenamePL()
     {

@@ -8,18 +8,16 @@ public class PlayerNamed : MonoBehaviour
     [SerializeField] private Text PlName;
     [SerializeField] public string Text;
     public static PlayerNamed instance;
-    public string PlNamed;
     public void Awake()
     {
         DontDestroyOnLoad(gameObject);
+        Text = "pussy";
     }
-    public void Start()
-    {
-        GameManager.instance.RenamePL();
-    }
+    
     public void SaveInputText()
     {
         Text = PlName.text;
+        GameManager.instance.RenamePL();
     }
     public string ReturnName()
     {

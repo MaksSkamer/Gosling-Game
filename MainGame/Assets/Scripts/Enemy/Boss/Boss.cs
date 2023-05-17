@@ -16,7 +16,6 @@ public class Boss : Enemy
 
     protected void Start()
     {
-        Debug.Log("dsadasd");
         base.Start();
         EnableHPBar(); 
         Yspeed = 0;

@@ -13,6 +13,7 @@ public class Boss : Enemy
     private float lastRandT;
     public GameObject BossDeath;
     private SpriteRenderer grassie;
+    public GameObject DeathMenu;
 
     protected void Start()
     {
@@ -22,6 +23,7 @@ public class Boss : Enemy
         Xspeed = 0;
         a.volume = 0.5f;
         grassie = transform.GetChild(0).GetComponent<SpriteRenderer>();
+        DeathMenu.SetActive(false);
     }
     public void OnEnable()
     {
@@ -98,7 +100,8 @@ public class Boss : Enemy
         Invoke("Destruct", 5f);
 
         BossDeath = Instantiate(BossDeath) as GameObject;
-        BossDeath.transform.position = transform.position;        
+        BossDeath.transform.position = transform.position;
+        Invoke("winScrene", 5f);
     }
 
     void Destruct()
@@ -106,5 +109,11 @@ public class Boss : Enemy
         Destroy(gameObject);
         GameManager.instance.gold += Gold;
         GameManager.instance.Score += Score;
+    }
+    private void winScrene()
+    {
+        GameManager.instance.DeathSc = true;
+        DeathMenu.SetActive(true);
+        Time.timeScale = 0f;
     }
 }

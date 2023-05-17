@@ -61,6 +61,7 @@
     <Compile Include="Assets\Scripts\Player\Animation&amp;AudioControlller.cs" />
     <Compile Include="Assets\Scripts\Environment\SpawnTrigger.cs" />
     <Compile Include="Assets\Scripts\Additional\GameManager.cs" />
+    <Compile Include="Assets\Scripts\Additional\PlayerNamed.cs" />
     <Compile Include="Assets\Scripts\Additional\Collectable.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerController.cs" />
     <Compile Include="Assets\Scripts\Enemy\Brabir.cs" />
@@ -98,7 +99,6 @@
     <Compile Include="Assets\Scripts\Additional\interactive.cs" />
     <Compile Include="Assets\Scripts\Additional\SQLconnection.cs" />
     <Compile Include="Assets\Scripts\Environment\Camera\CameraMusic.cs" />
-    <Compile Include="Assets\Scripts\UI\Menu\Scripts\PlayerNamed.cs" />
     <Compile Include="Assets\Scripts\Additional\Fighter.cs" />
     <Compile Include="Assets\Scripts\Additional\Mover.cs" />
   </ItemGroup>

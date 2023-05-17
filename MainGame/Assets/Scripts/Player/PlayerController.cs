@@ -27,7 +27,6 @@ public class PlayerController : Mover
         DeathMenu.SetActive(false);
         base.Start();
         rb = GetComponent<Rigidbody2D>();
-        DontDestroyOnLoad(gameObject);
         EndDash = false;
         movementControl= false;       
     }

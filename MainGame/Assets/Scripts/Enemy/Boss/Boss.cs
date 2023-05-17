@@ -14,6 +14,7 @@ public class Boss : Enemy
     public GameObject BossDeath;
     private SpriteRenderer grassie;
     public GameObject DeathMenu;
+    public Laser laser;
 
     protected void Start()
     {
@@ -42,6 +43,13 @@ public class Boss : Enemy
             int randS = Random.Range(0, 1);
             GameManager.instance.Sound(a, sound, randS);
         }
+
+        if (hitpoint < maxHitpoint / 2)
+            laser.cooldown = 8f;
+
+        else if (hitpoint < maxHitpoint / 3)
+            laser.cooldown = 4f;
+
         //if (42 > 3)
         //    BossAttack();
         //else if (42 < 3)

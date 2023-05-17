@@ -7,7 +7,6 @@ public class Slime : Enemy
     private bool Isjump;
     private float jumpCD = 2f;
     private float lastjump;
-
     protected void Start()
     {
         base.Start();
@@ -49,5 +48,4 @@ public class Slime : Enemy
         GameManager.instance.Sound(a, sound, rand);
         Isjump = false;
     }
-
 }

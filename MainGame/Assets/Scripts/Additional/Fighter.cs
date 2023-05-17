@@ -54,7 +54,7 @@ public class Fighter : MonoBehaviour
             }                  
             else if (transform.name == "Boss")
             {
-                int randB = Random.Range(4, 6);
+                int randB = Random.Range(3, 5);
                 a.clip = sound[randB];
                 GameManager.instance.Sound(a, sound, randB);
                 GameManager.instance.ShowText("- " + dmg.damageAmount.ToString() + " HP", 30, Color.red, transform.position + new Vector3(8, 0, 0), Vector3.up * 30, 0.5f);

@@ -44,21 +44,18 @@ public class Pause_menu : MonoBehaviour
 
     public void LoadMenu()
     {
-        Debug.Log("Load");
         Time.timeScale= 1f;
-        SceneManager.LoadScene("Menu");
+        Invoke("menu", 2f);
     }
 
     public void QuitGame()
     {
-        Debug.Log("Quit");
-        Application.Quit();
+        Invoke("quit", 2f);
     }
 
     public void OsuFuck()
     {
         count++;
-        Debug.Log(count);
         if (count >= 10)
         {
             osu.color = Color.white;
@@ -66,5 +63,15 @@ public class Pause_menu : MonoBehaviour
         }
         else
             osu.color = Color.clear;
+    }
+
+    void menu()
+    {
+        SceneManager.LoadScene("_Menu");
+    }
+
+    void qiut()
+    {
+        Application.Quit();
     }
 }

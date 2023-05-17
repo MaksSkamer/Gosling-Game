@@ -7,15 +7,9 @@ EditorBuildSettings:
   m_Scenes:
   - enabled: 1
     path: Assets/Scenes/_Menu.unity
-    guid: cb805176034e66344a643194a5c2b3af
-  - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
+    guid: 233996f9035ed84408ea48822057cf50
   - enabled: 1
     path: Assets/Scenes/SampleScene 2.unity
-    guid: 4ff3b9f917a9c9b40a8f5be54e7cbb95
-  - enabled: 1
-    path: Assets/Scenes/TestScene.unity
-    guid: 8d635757ddcc8fb449340afd141e18e2
+    guid: 0e4e74883c2505141803bb916ca292a8
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0

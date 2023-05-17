@@ -18,7 +18,6 @@ public class GameManager : MonoBehaviour
         }
         instance = this;
         //SceneManager.sceneLoaded += LoadState;
-        DontDestroyOnLoad(gameObject);
         
     }
   
@@ -111,4 +110,5 @@ public class GameManager : MonoBehaviour
     {
         SoundManager.StopSound(a);
     }
+
 }

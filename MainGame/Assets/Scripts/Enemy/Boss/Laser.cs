@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Laser : MonoBehaviour
 {
-    private float cooldown = 25f;
+    public float cooldown = 25f;
     private float lastshoot;
 
     private Animator anim;
@@ -12,7 +12,6 @@ public class Laser : MonoBehaviour
     private Animator animSBlow;
     private Animator animTrack;
     private Animator animRuby;
-    private Animator camAN;
     protected AudioSource a;
     public AudioClip[] sound;
 
